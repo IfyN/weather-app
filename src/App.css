@@ -1,3 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+
 .entry {
-  width: 100%;
+  display: grid;
+  grid-template-columns: 25% 75%;
+  height: 100vh;
+  font-family: "Raleway";
+}
+
+@media screen and (min-width: 800px) {
+  entry {
+    grid-auto-flow: column;
+  }
 }
