@@ -10,7 +10,11 @@ function Sidebar() {
           src="https://res.cloudinary.com/ifeoma/image/upload/v1639659828/Shower_nsrvy9.png"
           alt="Shower"
         />
-        <h1>15c</h1>
+
+        <div className="weather-readings">
+          <h1>15°C</h1>
+          <h3>Shower</h3>
+        </div>
       </div>
     </StyledSidebar>
   );

@@ -1,19 +1,29 @@
 import styled from "styled-components";
 
 export const StyledSidebar = styled.div`
-  position: relative;
-  display: flex;
-  min-height: 100vh;
-  width: 459px;
-  background-color: #1e213a;
-  padding: 88px 0px;
 
-  @media only screen and (max-width: 768px) {
+  background-color: #1e213a;
+
+
+  /* @media only screen and (max-width: 768px) {
     width: 100%;
+  }
+  */
+
+  .weather-readings{
+    color: #E7E7EB;
+    text-align: center;
   }
 
   h1{
-    top:200px;
+    position: relative;
+    margin-top: 87px;
+    font-size: 7em;
+  } 
+
+  h3{
+    font-size: 2em;
+    font-weight: ;
   }
 
   .sidebar__image-cloud {
