@@ -1,13 +1,12 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Sidebar from "./components/Sidebar";
-import Main from "./components/Main";
+import DailyWeather from "./components/DailyWeather";
 
 function App() {
   return (
     <div className="entry">
       <Sidebar />
-      <Main />
+      <DailyWeather />
     </div>
   );
 }
