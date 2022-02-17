@@ -1,12 +1,12 @@
 import "./App.css";
 import Sidebar from "./components/Sidebar";
-import DailyWeather from "./components/DailyWeather";
+import Dashboard from "./components/Dashboard";
 
 function App() {
   return (
     <div className="entry">
       <Sidebar />
-      <DailyWeather />
+      <Dashboard />
     </div>
   );
 }

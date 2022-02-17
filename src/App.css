@@ -2,13 +2,13 @@
 
 .entry {
   display: grid;
-  grid-template-columns: 25% 75%;
+  grid-template-columns: 30% 70%;
   height: 100vh;
   font-family: "Raleway";
 }
 
 @media screen and (min-width: 800px) {
-  entry {
+  .entry {
     grid-auto-flow: column;
   }
 }
