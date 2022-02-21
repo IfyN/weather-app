@@ -8,10 +8,12 @@ function DailyWeather() {
         {Infobox.map((item, idx) => {
           return (
             <div className="date-one" key={idx}>
-              <p> {item.date} </p>
-              <p> {item.cent} </p>
+              <p className="c-dashboard_infobox-date"> {item.date} </p>
               <img src={item.img} />
-              <p> {item.fan} </p>
+              <div className="c-dashboard_infobox-text">
+                <p> {item.cent} </p>
+                <p> {item.fan} </p>
+              </div>
             </div>
           );
         })}

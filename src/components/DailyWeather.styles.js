@@ -8,8 +8,8 @@ export const StyledDailyWeather = styled.div`
   .container {
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(5, 200px);
-    gap: 30px;
+    grid-template-columns: repeat(5, 150px);
+    gap: 50px;
     padding: 10px;
     margin-top: 12%;
 
@@ -21,5 +21,22 @@ export const StyledDailyWeather = styled.div`
 
   .date-one {
     background-color: #1e213a;
+  }
+
+  img {
+    display: flex;
+    position: relative;
+    margin-left: 25%;
+    height: 62px;
+  }
+
+  .c-dashboard_infobox-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .c-dashboard_infobox-date {
+    text-align: center;
   }
 `;
