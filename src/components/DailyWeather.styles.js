@@ -5,12 +5,24 @@ export const StyledDailyWeather = styled.div`
   margin: 0 auto;
   height: 300px;
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p {
+    color: #fff;
+  }
+
   .container {
+    margin-left: ;
+  }
+
+  .infobox-container {
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(5, 150px);
     gap: 50px;
-    padding: 10px;
     margin-top: 12%;
 
     @media screen and (max-width: 768px) {
@@ -38,5 +50,18 @@ export const StyledDailyWeather = styled.div`
 
   .c-dashboard_infobox-date {
     text-align: center;
+  }
+
+  .highlight-container {
+    margin-left: 90px;
+    margin-top: 72px;
+  }
+
+  .c-highlight-container {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2, 328px);
+    gap: 50px;
+    margin-top: 12%;
   }
 `;
