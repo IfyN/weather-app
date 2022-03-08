@@ -59,9 +59,27 @@ export const StyledDailyWeather = styled.div`
 
   .c-highlight-container {
     display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(2, 328px);
-    gap: 50px;
-    margin-top: 12%;
+    grid-template-columns: repeat(2, 440px);
+    margin-top: 9%;
+    gap: 80px;
+  }
+
+  .c-highlight-container_wind {
+    background-color: #1e213a;
+  }
+
+  h1.c-dashboard_infobox-date {
+    font-size: 5em;
+    font-weight: 800;
+  }
+
+  span.c-dashboard_infobox-unit {
+    font-size: 2em;
+    font-weight: 300;
+  }
+
+  .c-dashboard_infobox-reading {
+    display: flex;
+    flex-direction: column;
   }
 `;

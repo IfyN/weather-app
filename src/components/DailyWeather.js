@@ -24,7 +24,20 @@ function DailyWeather() {
         <h2>Today's Highlight</h2>
         <div className="c-highlight-container">
           <div className="c-highlight-container_wind">
-            <p className="c-dashboard_infobox-date">Wind Status</p>
+            <p className="c-dashboard_infobox-date">Wind</p>
+            <div className="c-dashboard_infobox-reading">
+              <h1> 7</h1> <span>mph</span>
+              <div className="">
+                <p>WSW</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="c-highlight-container_wind">
+            <p className="c-dashboard_infobox-date">Humidity</p>
+            <div className="c-dashboard_infobox-reading">
+              <h1> 84%</h1> <span>mph</span>
+            </div>
           </div>
 
           <div className="c-highlight-container_humidity"></div>
