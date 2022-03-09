@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import breakpoint from "../breakpoint";
 
 export const StyledDailyWeather = styled.div`
   width: 90%;
@@ -14,25 +15,21 @@ export const StyledDailyWeather = styled.div`
     color: #fff;
   }
 
-  .container {
-    margin-left: ;
-  }
-
   .infobox-container {
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(5, 150px);
     gap: 50px;
     margin-top: 12%;
-
-    @media screen and (max-width: 768px) {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
   }
 
   .date-one {
     background-color: #1e213a;
+
+    @media ${breakpoint.device.tablet} {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
   }
 
   img {
