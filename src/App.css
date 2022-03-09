@@ -7,8 +7,9 @@
   font-family: "Raleway";
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (max-width: 768px) {
   .entry {
-    grid-auto-flow: column;
+    display: block;
+    width: 100;
   }
 }
