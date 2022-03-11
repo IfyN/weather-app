@@ -51,32 +51,40 @@ export const StyledDailyWeather = styled.div`
 
   .highlight-container {
     margin-left: 90px;
-    margin-top: 72px;
+    padding-top: 50px;
   }
 
   .c-highlight-container {
     display: grid;
     grid-template-columns: repeat(2, 440px);
+    grid-auto-rows: max-content;
     margin-top: 9%;
-    gap: 80px;
+    gap: 48px;
   }
 
   .c-highlight-container_wind {
     background-color: #1e213a;
   }
 
+  p.c-dashboard_infobox-unit {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 200;
+  }
+
   h1.c-dashboard_infobox-date {
     font-size: 5em;
     font-weight: 800;
-  }
-
-  span.c-dashboard_infobox-unit {
-    font-size: 2em;
-    font-weight: 300;
+    padding-bottom: 10px;
   }
 
   .c-dashboard_infobox-reading {
     display: flex;
     flex-direction: column;
+    font-size: 3em;
+    font-weight: 800;
+    text-align: center;
+  }
+  .c-visibilty-container {
   }
 `;
