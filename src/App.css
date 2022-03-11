@@ -3,8 +3,8 @@
 .entry {
   display: grid;
   grid-template-columns: 30% 70%;
-  height: 100vh;
   font-family: "Raleway";
+  min-height: 100vh;
 }
 
 @media screen and (max-width: 768px) {
