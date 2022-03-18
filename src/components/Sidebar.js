@@ -15,7 +15,20 @@ function Sidebar() {
   return (
     <StyledSidebar>
       {search ? (
-        <h1>Hello</h1>
+        <div className="weather-section">
+          <div className="form-location">
+            <form>
+              <input
+                type="text"
+                value={textarea}
+                onChange={handleChange}
+                placeholder="Search for places"
+              />
+            </form>
+
+            <button className="square-button" onClick={handleSearch}></button>
+          </div>
+        </div>
       ) : (
         <div className="weather-section">
           <div className="form">
