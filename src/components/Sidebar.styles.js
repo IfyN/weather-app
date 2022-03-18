@@ -18,6 +18,19 @@ export const StyledSidebar = styled.div`
   margin: 35px 46px 0;
 }
 
+.form-location {
+  display: flex;
+  justify-content: space-between;
+  margin: 35px 47px 0;
+}
+
+.form-location form {
+  display: flex;
+  justify-content: space-between;
+  margin: 35px 46px 0;
+  width: 268px;
+}
+
 input{
   height: 40px;
   width: 161px;
@@ -32,6 +45,14 @@ input::placeholder{
 }
 
 .round-button{
+  height: 40px;
+  width: 40px;
+  background-color: #6E707A;
+  border-radius: 50%;
+  border:none ;
+}
+
+.square-button{
   height: 40px;
   width: 40px;
   background-color: #6E707A;
