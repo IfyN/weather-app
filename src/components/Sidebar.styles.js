@@ -20,22 +20,28 @@ export const StyledSidebar = styled.div`
 
 .form-location {
   display: flex;
-  justify-content: space-between;
-  margin: 35px 47px 0;
+  /* justify-content: space-between; */
+  margin: 82px 47px 0;
 }
 
-.form-location form {
-  display: flex;
-  justify-content: space-between;
-  margin: 35px 46px 0;
+.form-location input {
+  height: 40px;
   width: 268px;
+  border: 1px solid #E7E7EB;
+  background-color: #1E213A;
 }
 
-input{
+.form input{
   height: 40px;
   width: 161px;
   background-color: #6E707A;
   border: none;
+}
+
+.form-location input::placeholder{
+  color: #616475;
+  text-align: left;
+  font-size: 16px;
 }
 
 input::placeholder{
@@ -53,11 +59,11 @@ input::placeholder{
 }
 
 .square-button{
-  height: 40px;
-  width: 40px;
-  background-color: #6E707A;
-  border-radius: 50%;
-  border:none ;
+  width: 86px;
+  margin-left: 12px;
+  background-color: #3C47E9;
+  border: none;
+  color: #E7E7EB;
 }
 
 .body{
