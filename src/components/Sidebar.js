@@ -22,11 +22,14 @@ function Sidebar() {
                 type="text"
                 value={textarea}
                 onChange={handleChange}
-                placeholder="Search for places"
+                placeholder="search location"
               />
             </form>
 
-            <button className="square-button" onClick={handleSearch}></button>
+            <button className="square-button" onClick={handleSearch}>
+              {" "}
+              Search
+            </button>
           </div>
         </div>
       ) : (
