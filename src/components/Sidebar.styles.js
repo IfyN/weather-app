@@ -8,20 +8,17 @@ export const StyledSidebar = styled.div`
 
 .weather-section{
   position: relative;
-  /* display: flex; */
-  /* margin-left: 20%; */
+  margin: 50px;
 }
 
 .form{
   display: flex;
   justify-content: space-between;
-  margin: 35px 46px 0;
 }
 
 .form-location {
   display: flex;
-  /* justify-content: space-between; */
-  margin: 82px 47px 0;
+  justify-content: center;
 }
 
 .form-location input {
@@ -33,21 +30,42 @@ export const StyledSidebar = styled.div`
 
 .form input{
   height: 40px;
-  width: 161px;
+  width: 200px;
   background-color: #6E707A;
   border: none;
+}
+
+.input-location{
+  display: flex;
+  justify-content: space-around;
+  padding-top: 50px;
+}
+
+.input-location input{
+  height: 64px;
+  width: 367px;
+  border: 1px solid #616475;
+  background-color: #1E213A;
 }
 
 .form-location input::placeholder{
   color: #616475;
   text-align: left;
   font-size: 16px;
+  padding-left: 10px;
 }
 
 input::placeholder{
   color: #E7E7EB;
   text-align: center;
   font-size: 16px;
+}
+
+.input-location input::placeholder{
+  color: #E7E7EB;
+  text-align: left;
+  font-size: 16px;
+  padding-left: 10px;
 }
 
 .round-button{
