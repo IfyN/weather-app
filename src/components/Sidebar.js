@@ -12,6 +12,10 @@ function Sidebar() {
   const handleSearch = () => {
     setSearch(true);
   };
+
+  const handleLocationChange = (event) => {
+    setTextarea(event.target.value);
+  };
   return (
     <StyledSidebar>
       {search ? (
@@ -30,6 +34,17 @@ function Sidebar() {
               {" "}
               Search
             </button>
+          </div>
+
+          <div className="input-location">
+            <form>
+              <input
+                type="text"
+                value={textarea}
+                onChange={handleLocationChange}
+                placeholder="Lagos"
+              />
+            </form>
           </div>
         </div>
       ) : (
