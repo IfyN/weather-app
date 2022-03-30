@@ -9,8 +9,12 @@ function Sidebar() {
     setTextarea(event.target.value);
   };
 
-  const handleSearch = () => {
+  const openBurger = () => {
     setSearch(true);
+  };
+
+  const closeBurger = () => {
+    setSearch(false);
   };
 
   const handleLocationChange = (event) => {
@@ -19,32 +23,35 @@ function Sidebar() {
   return (
     <StyledSidebar>
       {search ? (
-        <div className="weather-section">
-          <div className="form-location">
-            <form>
-              <input
-                type="text"
-                value={textarea}
-                onChange={handleChange}
-                placeholder="search location"
-              />
-            </form>
+        <div className="weather-section-two">
+          <div className="" onClick={closeBurger}></div>
+          <div className="form_section">
+            <div className="form-location">
+              <form>
+                <input
+                  type="text"
+                  value={textarea}
+                  onChange={handleChange}
+                  placeholder="search location"
+                />
+              </form>
 
-            <button className="square-button" onClick={handleSearch}>
-              {" "}
-              Search
-            </button>
-          </div>
+              <button className="square-button" onClick={openBurger}>
+                {" "}
+                Search
+              </button>
+            </div>
 
-          <div className="input-location">
-            <form>
-              <input
-                type="text"
-                value={textarea}
-                onChange={handleLocationChange}
-                placeholder="Lagos"
-              />
-            </form>
+            <div className="input-location">
+              <form>
+                <input
+                  type="text"
+                  value={textarea}
+                  onChange={handleLocationChange}
+                  placeholder="Lagos"
+                />
+              </form>
+            </div>
           </div>
         </div>
       ) : (
@@ -59,7 +66,7 @@ function Sidebar() {
               />
             </form>
 
-            <button className="round-button" onClick={handleSearch}></button>
+            <button className="round-button" onClick={openBurger}></button>
           </div>
           <div className="body">
             <img
