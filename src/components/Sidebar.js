@@ -1,5 +1,6 @@
 import { React, useState } from "react";
 import { StyledSidebar } from "./Sidebar.styles";
+import { Burger } from "./Burger";
 
 function Sidebar() {
   const [textarea, setTextarea] = useState();
@@ -24,34 +25,31 @@ function Sidebar() {
     <StyledSidebar>
       {search ? (
         <div className="weather-section-two">
-          <div className="" onClick={closeBurger}></div>
+          <div className="sidebar--burger">
+            <Burger onClick={closeBurger} />
+          </div>
           <div className="form_section">
-            <div className="form-location">
-              <form>
-                <input
-                  type="text"
-                  value={textarea}
-                  onChange={handleChange}
-                  placeholder="search location"
-                />
-              </form>
-
-              <button className="square-button" onClick={openBurger}>
+            <form className="form-location" onSubmit={() => {}}>
+              <input
+                type="text"
+                value={textarea}
+                onChange={handleChange}
+                placeholder="search location"
+              />
+              <button type="submit" className="square-button">
                 {" "}
                 Search
               </button>
-            </div>
+            </form>
 
-            <div className="input-location">
-              <form>
-                <input
-                  type="text"
-                  value={textarea}
-                  onChange={handleLocationChange}
-                  placeholder="Lagos"
-                />
-              </form>
-            </div>
+            <form className="input-location">
+              <input
+                type="text"
+                value={textarea}
+                onChange={handleLocationChange}
+                placeholder="Lagos"
+              />
+            </form>
           </div>
         </div>
       ) : (
