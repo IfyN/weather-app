@@ -13,7 +13,7 @@ export const StyledSidebar = styled.div`
 
   .weather-section-two{
     position: relative;
-    margin: 40px 0;
+    padding: 80px 70px;
   }
 
   .form {
@@ -32,11 +32,12 @@ export const StyledSidebar = styled.div`
       display: flex;
       justify-content: center;
       padding-top: 10%;
+      height: 40px;
     }
 
     .form-location input {
-      height: 40px;
-      width: 268px;
+      height: inherit;
+      flex-grow: 1;
       border: 1px solid #e7e7eb;
       background-color: #1e213a;
     }
@@ -56,7 +57,7 @@ export const StyledSidebar = styled.div`
 
     .input-location input {
       height: 64px;
-      width: 367px;
+      flex-grow: 1;
       border: 1px solid #616475;
       background-color: #1e213a;
     }
@@ -91,10 +92,17 @@ export const StyledSidebar = styled.div`
 
     .square-button {
       width: 86px;
+      height: 100%;
       margin-left: 12px;
       background-color: #3c47e9;
       border: none;
       color: #e7e7eb;
+    }
+
+    .sidebar--burger{
+      position: absolute;
+      right: 120px;
+      top: 0;
     }
 
     .body {
@@ -133,6 +141,37 @@ export const StyledSidebar = styled.div`
       .sidebar__image-cloud {
         width: 30vw;
       }
+    }
+  }
+`;
+
+export const StyledBurger = styled.button`
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 44px;
+  height: 44px;
+  padding: 0.5rem;
+  background: hotpink;
+  border: none;
+  cursor: pointer;
+
+  div {
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 0.5rem;
+    transition: all 0.3s linear;
+    transform-origin: 0 0;
+
+    :first-child {
+      transform: ${({ closeBurger }) =>
+        closeBurger ? "rotate(34deg)" : "rotate(0)"};
+    }
+
+    :nth-child(2) {
+      transform: ${({ closeBurger }) =>
+        closeBurger ? "rotate(-34deg)" : "rotate(0)"};
     }
   }
 `;
