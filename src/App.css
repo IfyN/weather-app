@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
 
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
 .entry {
   display: grid;
   grid-template-columns: 30% 70%;
