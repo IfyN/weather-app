@@ -5,6 +5,7 @@ import { Burger } from "./Burger";
 function Sidebar() {
   const [textarea, setTextarea] = useState();
   const [search, setSearch] = useState(false);
+  const [searchPlaces, setSetPlaces] = useState("");
 
   const handleChange = (event) => {
     setTextarea(event.target.value);
@@ -58,7 +59,8 @@ function Sidebar() {
             <form>
               <input
                 type="text"
-                value={textarea}
+                name=""
+                value={searchPlaces}
                 onChange={handleChange}
                 placeholder="Search for places"
               />
