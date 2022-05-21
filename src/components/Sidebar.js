@@ -3,14 +3,21 @@ import { StyledSidebar } from "./Sidebar.styles";
 import { Burger } from "./Burger";
 
 function Sidebar() {
-  const [textarea, setTextarea] = useState();
+  const [location, setLocation] = useState();
   const [search, setSearch] = useState(false);
+  const [textarea, setTextarea] = useState();
   const [searchPlaces, setSetPlaces] = useState("");
 
+  /*onSubmit for forms */
+  const onSubmit = (e) => {
+    e.preventDefault();
+  };
+
+  /* handle change for input form */
   const handleChange = (event) => {
     setTextarea(event.target.value);
   };
-
+  /* Burger */
   const openBurger = () => {
     setSearch(true);
   };
@@ -18,7 +25,7 @@ function Sidebar() {
   const closeBurger = () => {
     setSearch(false);
   };
-
+  /* onChange for First form  */
   const handleLocationChange = (event) => {
     setTextarea(event.target.value);
   };
@@ -30,14 +37,17 @@ function Sidebar() {
             <Burger onClick={closeBurger} />
           </div>
           <div className="form_section">
-            <form className="form-location" onSubmit={() => {}}>
+            <form className="form-location" onSubmit={onSubmit}>
               <input
                 type="text"
-                value={textarea}
+                value={location}
                 onChange={handleChange}
                 placeholder="search location"
               />
-              <button type="submit" className="square-button">
+              <button
+                type="submit"
+                className="square-button"
+                onClick={onSubmit}>
                 {" "}
                 Search
               </button>
@@ -56,7 +66,7 @@ function Sidebar() {
       ) : (
         <div className="weather-section">
           <div className="form">
-            <form>
+            <form onSubmit={onSubmit}>
               <input
                 type="text"
                 name=""
