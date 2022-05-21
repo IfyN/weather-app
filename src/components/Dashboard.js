@@ -6,24 +6,24 @@ import context from "../themeContext";
 function Dashboard() {
   const dataContext = useContext(context);
   console.log(dataContext);
-  const { data, setData } = dataContext;
+  // const { data, setData } = dataContext;
   return (
     <StyledDashboard>
       <DailyWeather />
-      <h1
+      {/* <h1
         style={{
           color: "white",
         }}>
         {data.smaple}
         {data.user}
-      </h1>
-      <button
+      </h1> */}
+      {/* <button
         style={{
           backgroundColor: "red",
         }}
         onClick={() => {
           setData({ ...data, user: data.user + 1 });
-        }}></button>
+        }}></button> */}
     </StyledDashboard>
   );
 }

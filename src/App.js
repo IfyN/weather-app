@@ -8,15 +8,15 @@ import Axios from "axios";
 function App() {
   // const [data, setData] = useState({ smaple: "red", user: 0 });
   const getWeather = () => {
-    Axios.get ()
-  }
+    Axios.get();
+  };
   return (
-    <context.Provider value={{ data, setData }}>
-      <div className="entry">
-        <Sidebar />
-        <Dashboard />
-      </div>
-    </context.Provider>
+    // <context.Provider value={{ data, setData }}>
+    <div className="entry">
+      <Sidebar />
+      <Dashboard />
+    </div>
+    // </context.Provider>
   );
 }
 
