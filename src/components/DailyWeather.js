@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { StyledDailyWeather } from "./DailyWeather.styles";
 import { Infobox } from "./Infobox";
-function DailyWeather() {
+
+function DailyWeather({ weather }) {
   return (
     <StyledDailyWeather>
       <div className="container">
