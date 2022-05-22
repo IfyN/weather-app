@@ -1,15 +1,13 @@
 import "./App.css";
+import { useEffect, useState } from "react";
 import Sidebar from "./components/Sidebar";
 import Dashboard from "./components/Dashboard";
-import { useContext, useState } from "react";
+
 import context from "./themeContext";
-import Axios from "axios";
 
 function App() {
   // const [data, setData] = useState({ smaple: "red", user: 0 });
-  const getWeather = () => {
-    Axios.get();
-  };
+
   return (
     // <context.Provider value={{ data, setData }}>
     <div className="entry">
