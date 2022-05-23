@@ -2,7 +2,7 @@ export const Infobox = [
   {
     date: "Tomorrow",
     cent: "16°c",
-    fan: "11°c",
+    fan: "11°",
     img: "https://res.cloudinary.com/ifeoma/image/upload/v1639659828/Sleet_p7qwpq.png",
   },
   {
