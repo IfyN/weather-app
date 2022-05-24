@@ -3,6 +3,7 @@ import { StyledDailyWeather } from "./DailyWeather.styles";
 import { Infobox } from "./Infobox";
 
 function DailyWeather({ weather }) {
+   const displayWeather = data.map((result)=> result.daily.map(dail))
   return (
     <StyledDailyWeather>
       <div className="container">
