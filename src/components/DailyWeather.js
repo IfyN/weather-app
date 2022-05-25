@@ -2,20 +2,22 @@ import React, { useEffect } from "react";
 import { StyledDailyWeather } from "./DailyWeather.styles";
 import { Infobox } from "./Infobox";
 
-function DailyWeather({ weather }) {
-   const displayWeather = data.map((result)=> result.daily.map(dail))
+function DailyWeather({ climatic }) {
+  //  const displayWeather = data.map((result)=> result.daily.map(dail))
   return (
     <StyledDailyWeather>
       <div className="container">
         <div className="infobox-container">
-          {Infobox.map((item, idx) => {
+          {climatic?.map((item, idx) => {
             return (
               <div className="date-one" key={idx}>
                 <p className="c-dashboard_infobox-date"> {item.date} </p>
-                <img src={item.img} />
+                <img
+                  src={`http://openweathermap.org/img/wn/${item.weather[0]?.icon}@2x.png`}
+                />
                 <div className="c-dashboard_infobox-text">
-                  <p> {item.cent} </p>
-                  <p> {item.fan} </p>
+                  <p> {item.temp.max} </p>
+                  <p> {item.temp.min} </p>
                 </div>
               </div>
             );
