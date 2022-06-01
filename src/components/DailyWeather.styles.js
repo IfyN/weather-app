@@ -58,7 +58,7 @@ export const StyledDailyWeather = styled.div`
     display: grid;
     grid-template-columns: repeat(2, 440px);
     grid-auto-rows: max-content;
-    margin-top: 9%;
+    margin-top: 3%;
     gap: 48px;
   }
 
