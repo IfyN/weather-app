@@ -66,29 +66,27 @@ function Sidebar() {
       ) : (
         <div className="weather-section">
           <div className="form">
-            <form onSubmit={onSubmit}>
-              <input
-                type="text"
-                name=""
-                value={searchPlaces}
-                onChange={handleChange}
-                placeholder="Search for places"
-              />
-            </form>
+            <button onClick={openBurger} className="search-button">
+              Search for places
+            </button>
 
             <button className="round-button" onClick={openBurger}></button>
           </div>
-          <div className="body">
+          <div className="weather-details">
             <img
               className="sidebar__image-cloud"
               src="https://res.cloudinary.com/ifeoma/image/upload/v1639659828/Shower_nsrvy9.png"
               alt="Shower"
             />
 
-            <div className="weather-readings">
+            <footer className="weather-readings">
               <h1>15°C</h1>
               <h3>Shower</h3>
-            </div>
+              <p>
+                Today <span>•</span> 30 May{" "}
+              </p>
+              <h4>Paris</h4>
+            </footer>
           </div>
         </div>
       )}

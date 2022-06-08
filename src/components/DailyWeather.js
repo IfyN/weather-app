@@ -1,7 +1,7 @@
 import React from "react";
 import { StyledDailyWeather } from "./DailyWeather.styles";
 
-function DailyWeather({ climatic }) {
+function DailyWeather({ climatic, climaticDetails }) {
   return (
     <StyledDailyWeather>
       <div className="infobox-container">
@@ -23,37 +23,32 @@ function DailyWeather({ climatic }) {
       <div className="highlight-container">
         <h2>Today's Highlight</h2>
         <div className="c-highlight-container">
-          {climatic?.map((item, idx) => {
-            return (
-              <div className="c-highlight-container_wind" key={idx}>
-                <p className="c-dashboard_infobox-date">{item.wind_speed}</p>
-                <div className="c-dashboard_infobox-reading">
-                  <p> 7mph</p>
-                </div>
+          <div className="c-highlight-container_wind">
+            <p className="c-dashboard_infobox-date">Wind Status</p>
+            <div className="c-dashboard_infobox-reading">
+              <p> {climaticDetails?.wind?.speed}mph</p>
+            </div>
 
-                <p className="c-dashboard_infobox-unit">WSW</p>
-              </div>
-            );
-          })}
+            <p className="c-dashboard_infobox-unit">WSW</p>
+          </div>
 
           <div className="c-highlight-container_wind">
             <p className="c-dashboard_infobox-date">Humidity</p>
             <div className="c-dashboard_infobox-reading">
-              <p> 84%</p>
+              <p> {climaticDetails?.main?.humidity}%</p>
+              <div class></div>
             </div>
           </div>
-
           <div className="c-highlight-container_wind">
-            <p className="c-dashboard_infobox-date">Visibilty</p>
+            <p className="c-dashboard_infobox-date">Wind Direction</p>
             <div className="c-dashboard_infobox-reading">
-              <p> 6.4 miles </p>
+              <p> {climaticDetails?.wind?.deg} deg </p>
             </div>
           </div>
-
           <div className="c-highlight-container_wind">
             <p className="c-dashboard_infobox-date">Air Pressure</p>
             <div className="c-dashboard_infobox-reading">
-              <p> 998mb </p>
+              <p> {climaticDetails?.main?.pressure}mb </p>
             </div>
           </div>
         </div>

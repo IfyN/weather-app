@@ -21,6 +21,15 @@ export const StyledSidebar = styled.div`
     justify-content: space-between;
   }
 
+  .search-button {
+      height: 40px;
+      width: 200px;
+      background-color: #6e707a;
+      border: none;
+      color: #e7e7eb;
+      cursor: pointer;
+    }
+
   .form_section {
     display: flex;
     justify-content: center;
@@ -42,13 +51,6 @@ export const StyledSidebar = styled.div`
       background-color: #1e213a;
     }
 
-    .form input {
-      height: 40px;
-      width: 200px;
-      background-color: #6e707a;
-      border: none;
-    }
-
     .input-location {
       display: flex;
       justify-content: space-around;
@@ -67,12 +69,6 @@ export const StyledSidebar = styled.div`
       text-align: left;
       font-size: 16px;
       padding-left: 10px;
-    }
-
-    input::placeholder {
-      color: #e7e7eb;
-      text-align: center;
-      font-size: 16px;
     }
 
     .input-location input::placeholder {
@@ -105,7 +101,7 @@ export const StyledSidebar = styled.div`
       top: 0;
     }
 
-    .body {
+    .weather-details {
       display: flex;
       align-items: center;
       flex-direction: column;
@@ -119,7 +115,7 @@ export const StyledSidebar = styled.div`
 
     h1 {
       position: relative;
-      font-size: 7em;
+      font-size: 6em;
     }
 
     h3 {
@@ -131,7 +127,7 @@ export const StyledSidebar = styled.div`
     .sidebar__image-cloud {
       display: flex;
       position: relative;
-      width: 15vw;
+      width: 45%;
     }
 
     @media ${breakpoint.device.tablet} {
