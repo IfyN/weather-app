@@ -25,7 +25,6 @@ function Dashboard() {
       )
       .then((response) => {
         setOnedayData(response.data);
-        console.log(response);
       });
   };
 
