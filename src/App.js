@@ -4,19 +4,32 @@ import Sidebar from "./components/Sidebar";
 import Dashboard from "./components/Dashboard";
 import axios from "axios";
 
-import context from "./themeContext";
-
 function App() {
-  // const [data, setData] = useState({ smaple: "red", user: 0 });
-  const [currentData, setCurrentData] = useState({});
+  const [currentWeather, setCurrentWeather] = useState({});
+
+  const getCurrentData = () => {
+    axios
+      .get(
+        "https://api.openweathermap.org/data/2.5/weather?lat=6.5244&lon=3.3792&appid=f8db3768585aa064c24cdd0227ba44da"
+      )
+      .then((response) => {
+        setCurrentWeather(response.data);
+      })
+      .catch((err) => {
+        // Handle Error Here
+        console.error(err);
+      });
+  };
+
+  useEffect(() => {
+    getCurrentData();
+  }, []);
 
   return (
-    // <context.Provider value={{ data, setData }}>
     <div className="entry">
-      <Sidebar />
+      <Sidebar current={currentWeather} />
       <Dashboard />
     </div>
-    // </context.Provider>
   );
 }
 
