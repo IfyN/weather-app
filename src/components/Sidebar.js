@@ -86,7 +86,7 @@ function Sidebar({ current }) {
               <p>
                 Today <span>•</span> 30 May{" "}
               </p>
-              <h4>Paris</h4>
+              <h4>{current?.name}</h4>
             </footer>
           </div>
         </div>
