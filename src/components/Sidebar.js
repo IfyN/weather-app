@@ -2,7 +2,7 @@ import { React, useState } from "react";
 import { StyledSidebar } from "./Sidebar.styles";
 import { Burger } from "./Burger";
 
-function Sidebar() {
+function Sidebar({ current }) {
   const [location, setLocation] = useState();
   const [search, setSearch] = useState(false);
   const [textarea, setTextarea] = useState();
@@ -47,7 +47,8 @@ function Sidebar() {
               <button
                 type="submit"
                 className="square-button"
-                onClick={onSubmit}>
+                onClick={onSubmit}
+              >
                 {" "}
                 Search
               </button>
@@ -80,8 +81,8 @@ function Sidebar() {
             />
 
             <footer className="weather-readings">
-              <h1>15°C</h1>
-              <h3>Shower</h3>
+              <h1>{current?.main?.temp}</h1>
+              <h3>{current?.weather[0]?.main}</h3>
               <p>
                 Today <span>•</span> 30 May{" "}
               </p>
