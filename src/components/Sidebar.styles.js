@@ -148,9 +148,9 @@ export const StyledBurger = styled.button`
   width: 44px;
   height: 44px;
   padding: 0.5rem;
-  background: hotpink;
   border: none;
   cursor: pointer;
+  background: none;
 
   div {
     width: 100%;
@@ -162,12 +162,12 @@ export const StyledBurger = styled.button`
 
     :first-child {
       transform: ${({ closeBurger }) =>
-        closeBurger ? "rotate(34deg)" : "rotate(0)"};
+        closeBurger ? "rotate(0)" : "rotate(31deg)"};
     }
 
     :nth-child(2) {
       transform: ${({ closeBurger }) =>
-        closeBurger ? "rotate(-34deg)" : "rotate(0)"};
+        closeBurger ? "rotate(0)" : "rotate(-35deg)"};
     }
   }
 `;
