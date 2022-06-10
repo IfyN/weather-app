@@ -162,12 +162,12 @@ export const StyledBurger = styled.button`
 
     :first-child {
       transform: ${({ closeBurger }) =>
-        closeBurger ? "rotate(0)" : "rotate(31deg)"};
+        closeBurger ? "rotate(0)" : "rotate(32deg)"};
     }
 
     :nth-child(2) {
       transform: ${({ closeBurger }) =>
-        closeBurger ? "rotate(0)" : "rotate(-35deg)"};
+        closeBurger ? "rotate(0)" : "rotate(-34deg)"};
     }
   }
 `;
