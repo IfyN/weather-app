@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import { StyledSidebar } from "./Sidebar.styles";
 import { Burger } from "./Burger";
 
@@ -7,6 +7,28 @@ function Sidebar({ current }) {
   const [search, setSearch] = useState(false);
   const [textarea, setTextarea] = useState();
   const [searchPlaces, setSetPlaces] = useState("");
+
+  // const d = newDate();
+  // console.log(newDate());
+  const weekDay = ["Sun", "Mon", "Tue", "Wed", "Thurs", "Fri", "Sat"];
+  const months = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sept",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+
+  // const day = weekDay[d.getDay()];
+  // const month = months[d.getMonth()];
+  // const date = d.getDate();
 
   /*onSubmit for forms */
   const onSubmit = (e) => {
@@ -82,7 +104,7 @@ function Sidebar({ current }) {
 
             <footer className="weather-readings">
               <h1>{current?.main?.temp}</h1>
-              <h3>{current?.weather[0]?.main}</h3>
+              <h3>{current?.weather?.[0]?.main}</h3>
               <p>
                 Today <span>•</span> 30 May{" "}
               </p>
