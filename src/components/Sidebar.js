@@ -8,8 +8,11 @@ function Sidebar({ current }) {
   const [textarea, setTextarea] = useState();
   const [searchPlaces, setSetPlaces] = useState("");
 
-  // const d = newDate();
-  // console.log(newDate());
+  // const d = new Date();
+  // const date = `${d.getDate()},${d.getMonth() + 1}`;
+
+  const d = new Date();
+  console.log(new Date());
   const weekDay = ["Sun", "Mon", "Tue", "Wed", "Thurs", "Fri", "Sat"];
   const months = [
     "Jan",
@@ -26,9 +29,9 @@ function Sidebar({ current }) {
     "Dec",
   ];
 
-  // const day = weekDay[d.getDay()];
-  // const month = months[d.getMonth()];
-  // const date = d.getDate();
+  const day = weekDay[d.getDay()];
+  const month = months[d.getMonth()];
+  const date = d.getDate();
 
   /*onSubmit for forms */
   const onSubmit = (e) => {
@@ -106,7 +109,7 @@ function Sidebar({ current }) {
               <h1>{current?.main?.temp}</h1>
               <h3>{current?.weather?.[0]?.main}</h3>
               <p>
-                Today <span>•</span> 30 May{" "}
+                Today <span>•</span> {day}, {date} {month}
               </p>
               <h4>{current?.name}</h4>
             </footer>
