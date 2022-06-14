@@ -12,7 +12,6 @@ function Sidebar({ current }) {
   // const date = `${d.getDate()},${d.getMonth() + 1}`;
 
   const d = new Date();
-  console.log(new Date());
   const weekDay = ["Sun", "Mon", "Tue", "Wed", "Thurs", "Fri", "Sat"];
   const months = [
     "Jan",
@@ -79,14 +78,14 @@ function Sidebar({ current }) {
               </button>
             </form>
 
-            <form className="input-location">
+            {/* <form className="input-location">
               <input
                 type="text"
                 value={textarea}
                 onChange={handleLocationChange}
                 placeholder="Lagos"
               />
-            </form>
+            </form> */}
           </div>
         </div>
       ) : (

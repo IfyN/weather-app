@@ -88,7 +88,7 @@ export const StyledSidebar = styled.div`
 
     .square-button {
       width: 86px;
-      height: 100%;
+      height: inherit;
       margin-left: 12px;
       background-color: #3c47e9;
       border: none;
