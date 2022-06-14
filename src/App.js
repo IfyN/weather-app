@@ -6,7 +6,7 @@ import axios from "axios";
 
 function App() {
   const [currentWeather, setCurrentWeather] = useState({});
-  const [currentSearch, setCurrentSearch] = useState({});
+  const [currentSearch, setCurrentSearch] = useState([]);
 
   const getCurrentData = () => {
     axios
