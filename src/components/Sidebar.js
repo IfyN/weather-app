@@ -5,7 +5,7 @@ import { Burger } from "./Burger";
 function Sidebar({ current }) {
   const [location, setLocation] = useState();
   const [search, setSearch] = useState(false);
-  const [textarea, setTextarea] = useState();
+  const [query, setQuery] = useState("");
   const [searchPlaces, setSetPlaces] = useState("");
 
   // const d = new Date();
@@ -39,7 +39,7 @@ function Sidebar({ current }) {
 
   /* handle change for input form */
   const handleChange = (event) => {
-    setTextarea(event.target.value);
+    setQuery(event.target.value);
   };
   /* Burger */
   const openBurger = () => {
@@ -51,7 +51,7 @@ function Sidebar({ current }) {
   };
   /* onChange for First form  */
   const handleLocationChange = (event) => {
-    setTextarea(event.target.value);
+    setQuery(event.target.value);
   };
   return (
     <StyledSidebar>
