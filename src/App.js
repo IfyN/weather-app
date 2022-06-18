@@ -6,12 +6,17 @@ import axios from "axios";
 
 function App() {
   const [currentWeather, setCurrentWeather] = useState({});
-  const [currentSearch, setCurrentSearch] = useState([]);
+  const [currentSearch, setCurrentSearch] = useState("");
+  const [dailyWeatherData, setDailyWeatherData] = useState({});
+  // //state to store cities being searched for
+  // const [searchResult, setSearchResult] = useState([]);
+  const [lat, setLat] = useState("6.5244");
+  const [lon, setLon] = useState("3.3792");
 
   const getCurrentData = () => {
     axios
       .get(
-        "https://api.openweathermap.org/data/2.5/weather?lat=6.5244&lon=3.3792&appid=f8db3768585aa064c24cdd0227ba44da"
+        `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=f8db3768585aa064c24cdd0227ba44da`
       )
 
       .then((response) => {
@@ -38,15 +43,41 @@ function App() {
       });
   };
 
+  const getDaily = () => {
+    axios
+      .get(
+        `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts,&limit=4&appid=f8db3768585aa064c24cdd0227ba44da`
+      )
+      .then((response) => {
+        setDailyWeatherData(response.data);
+        console.log(response);
+      });
+  };
+
   useEffect(() => {
     getCurrentData();
     getCurrentLocation();
+    getDaily();
   }, []);
+
+  //handle the searching of the city
+  // useEffect(() => {
+  //   setSearchResult(
+  //     searchResult.filter((citiesData) =>
+  //       citiesData["cities"].includes(currentSearch)
+  //     )
+  //   );
+  // }, [currentSearch, searchResult]);
 
   return (
     <div className="entry">
-      <Sidebar current={currentWeather} search={currentSearch} />
-      <Dashboard />
+      <Sidebar currentWeather={currentWeather} search={currentSearch} />
+      <Dashboard
+        lon={lon}
+        lat={lat}
+        currentWeather={currentWeather}
+        dailyWeatherData={dailyWeatherData.daily}
+      />
     </div>
   );
 }
