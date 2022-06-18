@@ -1,11 +1,11 @@
 import React from "react";
 import { StyledDailyWeather } from "./DailyWeather.styles";
 
-function DailyWeather({ climatic, climaticDetails }) {
+function DailyWeather({ dailyWeatherData, currentWeather }) {
   return (
     <StyledDailyWeather>
       <div className="infobox-container">
-        {climatic?.map((item, idx) => {
+        {dailyWeatherData?.map((item, idx) => {
           return (
             <div className="date-one" key={idx}>
               <p className="c-dashboard_infobox-date"> {item.date} </p>
@@ -26,7 +26,7 @@ function DailyWeather({ climatic, climaticDetails }) {
           <div className="c-highlight-container_wind">
             <p className="c-dashboard_infobox-date">Wind Status</p>
             <div className="c-dashboard_infobox-reading">
-              <p> {climaticDetails?.wind?.speed}mph</p>
+              <p> {currentWeather?.wind?.speed}mph</p>
             </div>
 
             <p className="c-dashboard_infobox-unit">WSW</p>
@@ -35,20 +35,20 @@ function DailyWeather({ climatic, climaticDetails }) {
           <div className="c-highlight-container_wind">
             <p className="c-dashboard_infobox-date">Humidity</p>
             <div className="c-dashboard_infobox-reading">
-              <p> {climaticDetails?.main?.humidity}%</p>
+              <p> {currentWeather?.main?.humidity}%</p>
               <div class></div>
             </div>
           </div>
           <div className="c-highlight-container_wind">
             <p className="c-dashboard_infobox-date">Wind Direction</p>
             <div className="c-dashboard_infobox-reading">
-              <p> {climaticDetails?.wind?.deg} deg </p>
+              <p> {currentWeather?.wind?.deg} deg </p>
             </div>
           </div>
           <div className="c-highlight-container_wind">
             <p className="c-dashboard_infobox-date">Air Pressure</p>
             <div className="c-dashboard_infobox-reading">
-              <p> {climaticDetails?.main?.pressure}mb </p>
+              <p> {currentWeather?.main?.pressure}mb </p>
             </div>
           </div>
         </div>
