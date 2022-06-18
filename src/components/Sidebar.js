@@ -2,7 +2,7 @@ import { React, useState, useEffect } from "react";
 import { StyledSidebar } from "./Sidebar.styles";
 import { Burger } from "./Burger";
 
-function Sidebar({ current }) {
+function Sidebar({ currentWeather }) {
   const [location, setLocation] = useState();
   const [search, setSearch] = useState(false);
   const [query, setQuery] = useState("");
@@ -105,12 +105,12 @@ function Sidebar({ current }) {
             />
 
             <footer className="weather-readings">
-              <h1>{current?.main?.temp}</h1>
-              <h3>{current?.weather?.[0]?.main}</h3>
+              <h1>{currentWeather?.main?.temp}</h1>
+              <h3>{currentWeather?.weather?.[0]?.main}</h3>
               <p>
                 Today <span>•</span> {day}, {date} {month}
               </p>
-              <h4>{current?.name}</h4>
+              <h4>{currentWeather?.name}</h4>
             </footer>
           </div>
         </div>
