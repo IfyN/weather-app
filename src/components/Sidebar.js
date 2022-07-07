@@ -1,15 +1,32 @@
 import { React, useState, useEffect } from "react";
 import { StyledSidebar } from "./Sidebar.styles";
 import { Burger } from "./Burger";
-
-function Sidebar({ currentWeather }) {
-  const [location, setLocation] = useState();
+import axios from "axios";
+function Sidebar({ currentWeather, updateCoordinates }) {
+  const [locations, setLocations] = useState([]); //handles api results
   const [search, setSearch] = useState(false);
-  const [query, setQuery] = useState("");
-  const [searchPlaces, setSetPlaces] = useState("");
+  const [query, setQuery] = useState(""); //handles input form
+  const [searchPlaces, setSearchPlaces] = useState("");
 
-  // const d = new Date();
-  // const date = `${d.getDate()},${d.getMonth() + 1}`;
+  const searchLocations = () => {
+    axios
+      .get(
+        `https://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=15&appid=f8db3768585aa064c24cdd0227ba44da`
+      )
+      .then((response) => {
+        setLocations(response.data);
+      })
+      .catch((err) => {
+        // Handle Error Here
+        console.error(err);
+      });
+  };
+
+  // use this as the handler for the select dropdown. Pass the slected location
+  const onSelect = (locations) => {
+    // call updateCoordinates with the lat and lon values of the selected location
+    // updateCoordinates()
+  };
 
   const d = new Date();
   const weekDay = ["Sun", "Mon", "Tue", "Wed", "Thurs", "Fri", "Sat"];
@@ -35,6 +52,7 @@ function Sidebar({ currentWeather }) {
   /*onSubmit for forms */
   const onSubmit = (e) => {
     e.preventDefault();
+    searchLocations();
   };
 
   /* handle change for input form */
@@ -49,10 +67,7 @@ function Sidebar({ currentWeather }) {
   const closeBurger = () => {
     setSearch(false);
   };
-  /* onChange for First form  */
-  const handleLocationChange = (event) => {
-    setQuery(event.target.value);
-  };
+
   return (
     <StyledSidebar>
       {search ? (
@@ -64,19 +79,25 @@ function Sidebar({ currentWeather }) {
             <form className="form-location" onSubmit={onSubmit}>
               <input
                 type="text"
-                value={location}
+                value={query}
                 onChange={handleChange}
                 placeholder="search location"
               />
-              <button
-                type="submit"
-                className="square-button"
-                onClick={onSubmit}
-              >
+              <button type="submit" className="square-button">
                 {" "}
                 Search
               </button>
             </form>
+
+            <div className="displayed-cities">
+              {locations?.map((item, idx) => {
+                return (
+                  <div className="city" key={idx}>
+                    {item.name}, {item.country}
+                  </div>
+                );
+              })}
+            </div>
 
             {/* <form className="input-location">
               <input
