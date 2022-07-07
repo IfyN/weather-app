@@ -6,12 +6,17 @@ import axios from "axios";
 
 function App() {
   const [currentWeather, setCurrentWeather] = useState({});
-  const [currentSearch, setCurrentSearch] = useState("");
+  const [searchLocation, setSearchLocation] = useState("");
   const [dailyWeatherData, setDailyWeatherData] = useState({});
   // //state to store cities being searched for
   // const [searchResult, setSearchResult] = useState([]);
   const [lat, setLat] = useState("6.5244");
   const [lon, setLon] = useState("3.3792");
+
+  const updateCoordinates = ({ lat, lon }) => {
+    setLat(lat);
+    setLon(lon);
+  };
 
   const getCurrentData = () => {
     axios
@@ -28,21 +33,6 @@ function App() {
       });
   };
 
-  const getCurrentLocation = () => {
-    axios
-      .get(
-        "https://api.openweathermap.org/geo/1.0/direct?q=lagos,&limit=5&appid=f8db3768585aa064c24cdd0227ba44da"
-      )
-
-      .then((response) => {
-        setCurrentSearch(response.data);
-      })
-      .catch((err) => {
-        // Handle Error Here
-        console.error(err);
-      });
-  };
-
   const getDaily = () => {
     axios
       .get(
@@ -50,13 +40,11 @@ function App() {
       )
       .then((response) => {
         setDailyWeatherData(response.data);
-        console.log(response);
       });
   };
 
   useEffect(() => {
     getCurrentData();
-    getCurrentLocation();
     getDaily();
   }, []);
 
@@ -71,7 +59,10 @@ function App() {
 
   return (
     <div className="entry">
-      <Sidebar currentWeather={currentWeather} search={currentSearch} />
+      <Sidebar
+        currentWeather={currentWeather}
+        updateCoordinates={updateCoordinates}
+      />
       <Dashboard
         lon={lon}
         lat={lat}
