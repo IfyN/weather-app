@@ -130,6 +130,22 @@ export const StyledSidebar = styled.div`
       width: 45%;
     }
 
+    .displayed-cities{
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+    width: 85%;
+    }
+
+    .city{
+      border: 1px solid #616475;
+      cursor: pointer;
+      margin-bottom: 30px;
+      padding: 20px 10px;
+      width: 100%;
+    }
+
     @media ${breakpoint.device.tablet} {
       width: 100vw;
       height: 100vh;
