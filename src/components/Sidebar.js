@@ -2,6 +2,9 @@ import { React, useState, useEffect } from "react";
 import { StyledSidebar } from "./Sidebar.styles";
 import { Burger } from "./Burger";
 import axios from "axios";
+import AccessAlarmIcon from "@mui/icons-material/AccessAlarm";
+import ThreeDRotation from "@mui/icons-material/ThreeDRotation";
+
 function Sidebar({ currentWeather, updateCoordinates }) {
   const [locations, setLocations] = useState([]); //handles api results
   const [search, setSearch] = useState(false);
@@ -82,7 +85,10 @@ function Sidebar({ currentWeather, updateCoordinates }) {
                 value={query}
                 onChange={handleChange}
                 placeholder="search location"
-              />
+              >
+                <span class="material-icons md-16 icon"></span>
+              </input>
+
               <button type="submit" className="square-button">
                 {" "}
                 Search

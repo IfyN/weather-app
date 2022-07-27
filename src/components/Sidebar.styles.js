@@ -49,6 +49,7 @@ export const StyledSidebar = styled.div`
       flex-grow: 1;
       border: 1px solid #e7e7eb;
       background-color: #1e213a;
+      color: #fff;
     }
 
     .input-location {
@@ -144,6 +145,7 @@ export const StyledSidebar = styled.div`
       margin-bottom: 30px;
       padding: 20px 10px;
       width: 100%;
+      color: #fff;
     }
 
     @media ${breakpoint.device.tablet} {
