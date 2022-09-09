@@ -2,8 +2,8 @@ import { React, useState, useEffect } from "react";
 import { StyledSidebar } from "./Sidebar.styles";
 import { Burger } from "./Burger";
 import axios from "axios";
-import AccessAlarmIcon from "@mui/icons-material/AccessAlarm";
-import ThreeDRotation from "@mui/icons-material/ThreeDRotation";
+// import AccessAlarmIcon from "@mui/icons-material/AccessAlarm";
+// import ThreeDRotation from "@mui/icons-material/ThreeDRotation";
 
 function Sidebar({ currentWeather, updateCoordinates }) {
   const [locations, setLocations] = useState([]); //handles api results
@@ -86,7 +86,7 @@ function Sidebar({ currentWeather, updateCoordinates }) {
                 onChange={handleChange}
                 placeholder="search location"
               >
-                <span class="material-icons md-16 icon"></span>
+                {/* <span className="material-icons md-16 icon"></span> */}
               </input>
 
               <button type="submit" className="square-button">
@@ -96,10 +96,19 @@ function Sidebar({ currentWeather, updateCoordinates }) {
             </form>
 
             <div className="displayed-cities">
-              {locations?.map((item, idx) => {
+              {locations?.map((location, idx) => {
                 return (
-                  <div className="city" key={idx}>
-                    {item.name}, {item.country}
+                  <div
+                    className="city"
+                    key={idx}
+                    onClick={() => {
+                      updateCoordinates({
+                        lat: location.lat,
+                        lon: location.lon,
+                      });
+                    }}
+                  >
+                    {location.name}, {location.country}
                   </div>
                 );
               })}
@@ -108,8 +117,8 @@ function Sidebar({ currentWeather, updateCoordinates }) {
             {/* <form className="input-location">
               <input
                 type="text"
-                value={textarea}
-                onChange={handleLocationChange}
+                // value={textarea}
+                // onChange={handleLocationChange}
                 placeholder="Lagos"
               />
             </form> */}
@@ -118,9 +127,7 @@ function Sidebar({ currentWeather, updateCoordinates }) {
       ) : (
         <div className="weather-section">
           <div className="form">
-            <button onClick={openBurger} className="search-button">
-              Search for places
-            </button>
+            <button className="search-button">Search for places</button>
 
             <button className="round-button" onClick={openBurger}></button>
           </div>
