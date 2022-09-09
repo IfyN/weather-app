@@ -40,13 +40,17 @@ function App() {
       )
       .then((response) => {
         setDailyWeatherData(response.data);
+      })
+      .catch((err) => {
+        // Handle Error Here
+        console.error(err);
       });
   };
 
   useEffect(() => {
     getCurrentData();
     getDaily();
-  }, []);
+  }, [lat, lon]);
 
   //handle the searching of the city
   // useEffect(() => {
