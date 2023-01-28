@@ -17,10 +17,9 @@ export const StyledDailyWeather = styled.div`
 
   .infobox-container {
     display: grid;
-    justify-content: center;
     grid-template-columns: repeat(5, 150px);
     gap: 50px;
-    margin-top: 12%;
+    padding-top: 114px;
   }
 
   .date-one {
@@ -50,14 +49,12 @@ export const StyledDailyWeather = styled.div`
   }
 
   .highlight-container {
-    margin-left: 90px;
     padding-top: 50px;
   }
 
   .c-highlight-container {
     display: grid;
-    grid-template-columns: repeat(2, 440px);
-    grid-auto-rows: max-content;
+    grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
     margin-top: 3%;
     gap: 48px;
   }
